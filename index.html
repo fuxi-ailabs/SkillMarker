@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SkillMarker: watermarking for agent skills. Explore original and watermarked instructions, inspect saved detection results, and read the paper.">
+  <meta name="theme-color" content="#f8f9f5">
+  <meta property="og:title" content="SkillMarker — Watermarking for Agent Skills">
+  <meta property="og:description" content="Explore how protected rewriting and keyed watermarking support skill ownership verification and leakage tracing.">
+  <meta property="og:image" content="https://fuxi-ailabs.github.io/SkillMarker/assets/method.png">
+  <meta property="og:url" content="https://fuxi-ailabs.github.io/SkillMarker/">
+  <link rel="canonical" href="https://fuxi-ailabs.github.io/SkillMarker/">
+  <title>SkillMarker — Watermarking for Agent Skills</title>
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SkillMarker home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>SkillMarker<span class="brand-lab">/ FUXI AI LABS</span></a>
+    <nav aria-label="Main navigation"><a href="#examples">Examples</a><a href="#method">Method</a><a href="#paper">Paper</a><a class="nav-external" href="https://github.com/fuxi-ailabs/SkillMarker">GitHub ↗</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> AGENT SKILLS · TEXT WATERMARKING</p>
+        <h1 id="hero-title">Expertise, shared.<br><em>Origins, traceable.</em></h1>
+        <p class="hero-description">SkillMarker embeds keyed watermarks into agent skills, supporting ownership verification and leakage tracing while preserving essential instructions.</p>
+        <div class="actions"><a class="button primary" href="#examples">Explore watermark examples <span aria-hidden="true">↓</span></a><a class="button secondary" href="https://arxiv.org/abs/2610.15725">Read the paper ↗</a></div>
+        <p class="hero-note">Try the examples instantly. No sign-in or GPU required.</p>
+      </div>
+      <aside class="hero-document" aria-label="Excerpt from the Meeting Brief demonstration">
+        <div class="document-heading"><span class="file-icon" aria-hidden="true">≡</span><strong>SKILL.md</strong><span class="tiny-label">MEETING BRIEF</span></div>
+        <div class="document-body"><p class="code-muted">name: meeting-brief</p><h2>## Decisions</h2><p>Separate <mark>finalized decisions</mark> from <mark>ongoing proposals under discussion.</mark></p><p>Provide the rationale for a decision when the notes include it. Maintain all relevant conditions and disagreements that influence the outcome.</p></div>
+        <div class="document-footer"><span class="dot"></span> Changed wording. Preserved structure.</div>
+        <span class="document-caption">An excerpt from a precomputed, reviewed example.</span>
+      </aside>
+    </section>
+
+    <section id="examples" class="examples section" aria-labelledby="examples-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">01 / EXPLORE THE WATERMARK</p><h2 id="examples-title">Small changes.<br>A measurable signal.</h2></div><p>Compare two complete skills before and after watermarking. Inspect the wording and the recorded detection results.</p></div>
+        <div class="example-picker" role="group" aria-label="Choose an example">
+          <button type="button" data-example="meeting-brief" aria-pressed="true" disabled><span class="example-number">01</span><span><strong>Meeting Brief</strong><small>Decisions, actions &amp; open questions</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" data-example="incident-handoff" aria-pressed="false" disabled><span class="example-number">02</span><span><strong>Incident Handoff</strong><small>Facts, timelines &amp; next actions</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <p id="demo-status" role="status" aria-live="polite">Loading saved examples…</p>
+        <noscript><p>Enable JavaScript for the interactive comparison, or browse the <a href="demos/meeting-brief/source.md">original</a>, <a href="demos/meeting-brief/candidate.md">watermarked text</a> and <a href="demos/meeting-brief/evidence.json">saved scores</a>.</p></noscript>
+        <div id="demo-content" hidden>
+          <div class="demo-toolbar"><div><label for="passage">View passage</label><select id="passage"></select></div><label class="highlight-control"><input type="checkbox" id="highlight" checked> Highlight rewritten wording</label></div>
+          <div class="comparison">
+            <section class="text-panel" aria-labelledby="original-label"><div class="panel-heading"><h3 id="original-label">Original skill</h3><span>BEFORE</span></div><pre id="source-text" tabindex="0" aria-label="Original skill text"></pre></section>
+            <section class="text-panel candidate-panel" aria-labelledby="candidate-label"><div class="panel-heading"><h3 id="candidate-label">Watermarked skill</h3><span>AFTER</span></div><pre id="candidate-text" tabindex="0" aria-label="Watermarked skill text"></pre></section>
+          </div>
+          <p class="reading-note"><span class="swatch" aria-hidden="true"></span> Highlights show changed wording, not green-list token assignments.</p>
+          <div class="score-layout">
+            <div class="score-intro"><p class="eyebrow">SAVED FULL-DOCUMENT SCORES</p><h3>Inspect the signal.</h3><p>These scores cover the complete saved skill, even when a single passage is displayed above.</p><div class="bar-row"><span>Original</span><div class="bar-track"><span id="original-bar"></span></div><strong id="original-fraction"></strong></div><div class="bar-row"><span>Watermarked</span><div class="bar-track"><span id="candidate-bar"></span></div><strong id="candidate-fraction"></strong></div><p class="bar-caption">Green-token fraction · configured γ = 0.75</p></div>
+            <div class="score-table-wrap"><table class="score-table"><caption class="sr-only">Full-document detection results for the selected example</caption><thead><tr><th scope="col">Metric</th><th scope="col">Original</th><th scope="col">Watermarked</th></tr></thead><tbody id="scores"></tbody></table></div>
+          </div>
+          <div class="downloads"><span>Inspect the saved files</span><a id="source-download" download>Original .md ↓</a><a id="candidate-download" download>Watermarked .md ↓</a><a id="evidence-download" download>Scoring evidence .json ↓</a></div>
+          <details class="evidence-note"><summary>How to interpret these examples</summary><p>These are curated, precomputed demonstrations generated with Qwen3-8B. The text was reviewed and editorially corrected before final scoring. They are not an unbiased benchmark; Skill execution was not tested. Nominal p-values are not calibrated production false-positive rates, and detection alone does not establish semantic quality or prove ownership.</p><p id="configuration"></p><p>The downloaded evidence includes the settings, tokenizer fingerprint and SHA-256 hashes of both saved files. Demo material is available under <a href="demos/LICENSE.md">Apache-2.0</a>.</p></details>
+          <p class="curation-note">Precomputed and editorially reviewed examples. See the interpretation note above for scope and limitations.</p>
+        </div>
+        <div class="live-callout"><div><h3>Bring your own skill.</h3><p>Upload a complete SKILL.md and explore embedding and detection in the live app.</p></div><a class="button primary" href="https://alantang7-skillmark.hf.space/">Open Hugging Face demo ↗</a></div>
+      </div>
+    </section>
+
+    <section id="method" class="section method wrap" aria-labelledby="method-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE METHOD</p><h2 id="method-title">Protect the instructions.<br>Mark the expression.</h2></div><p>Quality-constrained rewriting and signal-oriented candidate search adapt KGW watermarking to structured agent skills.</p></div>
+      <figure class="method-figure"><a href="assets/method.png" aria-label="Open the method figure at full resolution"><img src="assets/method.png" alt="SkillMarker pipeline: quality-constrained rewriting, KGW-biased candidate search, reconstruction, and keyed detection." loading="lazy" width="2048" height="600"></a><figcaption>The SkillMarker framework. Select the figure to view it at full resolution.</figcaption></figure>
+      <div class="method-steps"><div><span>01</span><h3>Constrain the rewrite</h3><p>Separate essential content from flexible prose. Keep protected literals and structure in place.</p></div><div><span>02</span><h3>Search for signal</h3><p>Explore alternative expressions under a keyed logit bias and compare eligible candidates.</p></div><div><span>03</span><h3>Reconstruct &amp; inspect</h3><p>Assemble the skill, audit its quality, and test suspect text with full-text or sliding-window detection.</p></div></div>
+      <details class="motivation"><summary>Why watermark agent skills?</summary><p>Skills package reusable expertise in plaintext. That same portability makes their instructions easy to copy, redistribute, or merge into other skills.</p><a href="assets/motivation.png"><img src="assets/motivation.png" alt="Motivation: reusable skills encode expertise; copying and merging create tracing challenges; keyed watermarks can provide evidence of origin." loading="lazy" width="640"></a></details>
+    </section>
+
+    <section id="paper" class="paper-section section" aria-labelledby="paper-title"><div class="wrap paper-layout"><div><p class="eyebrow">03 / THE RESEARCH</p><h2 id="paper-title">SkillMarker: A KGW-Based Watermarking Method for Agent Skill Ownership Verification</h2><p class="authors">Alan Tang · Lifeng Wang · Gang Wu<br>Tao Zhang · Yantao Jia · Xiaofeng Zhu</p><p class="paper-meta">arXiv:2610.15725 · 2026</p><div class="actions"><a class="button primary" href="https://arxiv.org/abs/2610.15725">Read on arXiv ↗</a><a class="button secondary" href="https://arxiv.org/pdf/2610.15725">Paper PDF ↗</a></div></div><div class="citation"><div class="citation-heading"><h3>Cite this work</h3><button type="button" id="copy-citation">Copy BibTeX</button></div><pre id="citation-text" tabindex="0">@misc{tang2026skillmarker,
+  title = {SkillMarker: A KGW-Based Watermarking Method for Agent Skill Ownership Verification},
+  author = {Alan Tang and Lifeng Wang and Gang Wu and Tao Zhang and Yantao Jia and Xiaofeng Zhu},
+  year = {2026},
+  eprint = {2610.15725},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CR},
+  url = {https://arxiv.org/abs/2610.15725}
+}</pre><p id="copy-status" role="status" aria-live="polite"></p></div></div></section>
+  </main>
+  <footer class="wrap"><a class="brand" href="#">SkillMarker</a><span>Fuxi AI Labs · Research project</span><a href="https://github.com/fuxi-ailabs/SkillMarker">Project repository ↗</a></footer>
+</body>
+</html>

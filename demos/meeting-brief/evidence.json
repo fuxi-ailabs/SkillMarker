@@ -1,0 +1,80 @@
+{
+  "id": "meeting-brief",
+  "title": "Meeting Brief",
+  "description": "Organize decisions, actions, and open questions from meeting notes.",
+  "model": "Qwen/Qwen3-8B",
+  "settings": {
+    "decoder": "beam",
+    "prompt": "short",
+    "beams": 5,
+    "gamma": 0.75,
+    "delta": 8.0,
+    "temperature": 1.0,
+    "top_p": 0.9,
+    "top_k": 20,
+    "seed": 123,
+    "min_source_prose_tokens": 8,
+    "hash_key": 15485863
+  },
+  "license": "Apache-2.0",
+  "origin": "Original Skill written for this public demonstration.",
+  "source_sha256": "ae4b178a31e5eaa70ac9dd36686fb0c937fe6213448cf3b7d4cebbc60611dcbf",
+  "candidate_sha256": "38735ac0ca01962d804a3272c5052da029d205c593632913ae1093a2b30d03b2",
+  "source_score": {
+    "schema_version": 1,
+    "status": "scored",
+    "mode": "full",
+    "text_sha256": "ae4b178a31e5eaa70ac9dd36686fb0c937fe6213448cf3b7d4cebbc60611dcbf",
+    "parameters": {
+      "gamma": 0.75,
+      "hash_key": 15485863,
+      "device": "cuda",
+      "space_variants": "shared-v2",
+      "alpha": 0.01,
+      "correction": "bonferroni",
+      "window_tokens": 256,
+      "stride_tokens": 128
+    },
+    "calibrated": false,
+    "predecessor_rule": "Actual predecessor in the submitted full text; first document token unscored.",
+    "tokenizer_fingerprint": "a45edf97ec2831d92e65699b2d5d88137518127ce747418b8b09fd304491c6ad",
+    "full": {
+      "total_tokens": 307,
+      "scored_tokens": 285,
+      "green_hits": 222,
+      "green_fraction": 0.7789473684210526,
+      "z": 1.1285761872936695,
+      "nominal_p_value": 0.14414579484886797,
+      "detected": false
+    }
+  },
+  "candidate_score": {
+    "schema_version": 1,
+    "status": "scored",
+    "mode": "full",
+    "text_sha256": "38735ac0ca01962d804a3272c5052da029d205c593632913ae1093a2b30d03b2",
+    "parameters": {
+      "gamma": 0.75,
+      "hash_key": 15485863,
+      "device": "cuda",
+      "space_variants": "shared-v2",
+      "alpha": 0.01,
+      "correction": "bonferroni",
+      "window_tokens": 256,
+      "stride_tokens": 128
+    },
+    "calibrated": false,
+    "predecessor_rule": "Actual predecessor in the submitted full text; first document token unscored.",
+    "tokenizer_fingerprint": "a45edf97ec2831d92e65699b2d5d88137518127ce747418b8b09fd304491c6ad",
+    "full": {
+      "total_tokens": 324,
+      "scored_tokens": 302,
+      "green_hits": 262,
+      "green_fraction": 0.8675496688741722,
+      "z": 4.717634008714177,
+      "nominal_p_value": 3.587948167397071e-07,
+      "detected": true
+    }
+  },
+  "interpretation": "These two curated, precomputed examples illustrate watermark embedding and saved-text detection. The generated text was reviewed and editorially corrected before final scoring. They are not an unbiased benchmark. Structure and key requirements were checked; Skill execution was not tested. Detection statistics do not establish semantic quality, functional equivalence, or proof of ownership. The nominal p-values are not calibrated production false-positive rates."
+}

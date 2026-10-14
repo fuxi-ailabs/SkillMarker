@@ -1,0 +1,80 @@
+{
+  "id": "incident-handoff",
+  "title": "Incident Handoff",
+  "description": "Summarize incident facts, timelines, and next actions.",
+  "model": "Qwen/Qwen3-8B",
+  "settings": {
+    "decoder": "beam",
+    "prompt": "short",
+    "beams": 5,
+    "gamma": 0.75,
+    "delta": 8.0,
+    "temperature": 1.0,
+    "top_p": 0.9,
+    "top_k": 20,
+    "seed": 123,
+    "min_source_prose_tokens": 8,
+    "hash_key": 15485863
+  },
+  "license": "Apache-2.0",
+  "origin": "Original Skill written for this public demonstration.",
+  "source_sha256": "a2616c3d6f568bfe64eeae3fd5446e9b2602041155d19c27e3875a7bc314fc2d",
+  "candidate_sha256": "264dd0652b7662b5856e8d0fab9e4d0fa77b3896a827e9d06388a6cc3a9a8011",
+  "source_score": {
+    "schema_version": 1,
+    "status": "scored",
+    "mode": "full",
+    "text_sha256": "a2616c3d6f568bfe64eeae3fd5446e9b2602041155d19c27e3875a7bc314fc2d",
+    "parameters": {
+      "gamma": 0.75,
+      "hash_key": 15485863,
+      "device": "cuda",
+      "space_variants": "shared-v2",
+      "alpha": 0.01,
+      "correction": "bonferroni",
+      "window_tokens": 256,
+      "stride_tokens": 128
+    },
+    "calibrated": false,
+    "predecessor_rule": "Actual predecessor in the submitted full text; first document token unscored.",
+    "tokenizer_fingerprint": "a45edf97ec2831d92e65699b2d5d88137518127ce747418b8b09fd304491c6ad",
+    "full": {
+      "total_tokens": 319,
+      "scored_tokens": 297,
+      "green_hits": 224,
+      "green_fraction": 0.7542087542087542,
+      "z": 0.167506302543202,
+      "nominal_p_value": 0.4643875570941342,
+      "detected": false
+    }
+  },
+  "candidate_score": {
+    "schema_version": 1,
+    "status": "scored",
+    "mode": "full",
+    "text_sha256": "264dd0652b7662b5856e8d0fab9e4d0fa77b3896a827e9d06388a6cc3a9a8011",
+    "parameters": {
+      "gamma": 0.75,
+      "hash_key": 15485863,
+      "device": "cuda",
+      "space_variants": "shared-v2",
+      "alpha": 0.01,
+      "correction": "bonferroni",
+      "window_tokens": 256,
+      "stride_tokens": 128
+    },
+    "calibrated": false,
+    "predecessor_rule": "Actual predecessor in the submitted full text; first document token unscored.",
+    "tokenizer_fingerprint": "a45edf97ec2831d92e65699b2d5d88137518127ce747418b8b09fd304491c6ad",
+    "full": {
+      "total_tokens": 360,
+      "scored_tokens": 338,
+      "green_hits": 288,
+      "green_fraction": 0.8520710059171598,
+      "z": 4.333712621847161,
+      "nominal_p_value": 3.370408146127244e-06,
+      "detected": true
+    }
+  },
+  "interpretation": "These two curated, precomputed examples illustrate watermark embedding and saved-text detection. The generated text was reviewed and editorially corrected before final scoring. They are not an unbiased benchmark. Structure and key requirements were checked; Skill execution was not tested. Detection statistics do not establish semantic quality, functional equivalence, or proof of ownership. The nominal p-values are not calibrated production false-positive rates."
+}

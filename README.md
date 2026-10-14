@@ -9,6 +9,7 @@
 </p>
 
 <p align="center">
+  <a href="https://fuxi-ailabs.github.io/SkillMarker/"><img src="https://img.shields.io/badge/Project-Website-087660.svg" alt="Project website with interactive examples"></a>
   <a href="https://arxiv.org/abs/2610.15725"><img src="https://img.shields.io/badge/arXiv-2610.15725-b31b1b.svg" alt="Paper on arXiv"></a>
   <a href="https://arxiv.org/pdf/2610.15725"><img src="https://img.shields.io/badge/Paper-PDF-374151.svg" alt="Read the paper PDF"></a>
   <a href="https://alantang7-skillmark.hf.space/"><img src="https://img.shields.io/badge/Hugging%20Face-Live%20Demo-FFD21E.svg" alt="Try the live demo on Hugging Face"></a>
@@ -38,6 +39,12 @@ signals under preservation constraints.
 </details>
 
 ## Interactive demo
+
+**[Project website and instant examples →](https://fuxi-ailabs.github.io/SkillMarker/)**
+
+Compare original and watermarked Skills, inspect precomputed full-document
+detection scores, and download the saved files. The two curated examples were
+editorially reviewed before scoring; they are demonstrations, not a benchmark.
 
 **[Launch the demo →](https://alantang7-skillmark.hf.space/)**
 
