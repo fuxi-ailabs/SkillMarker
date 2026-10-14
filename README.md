@@ -5,7 +5,12 @@
 </p>
 
 <p align="center">
-  Alan Tang · Lifeng Wang · Gang Wu · Tao Zhang · Yantao Jia · Xiaofeng Zhu
+  Alan Tang<sup>1</sup> · Lifeng Wang<sup>1,2</sup> · Gang Wu<sup>1</sup> · Tao Zhang<sup>1</sup> · Yantao Jia<sup>1,*</sup> · Xiaofeng Zhu<sup>1</sup>
+</p>
+
+<p align="center">
+  <sup>1</sup> Huawei Inc.<br><sup>2</sup> Harbin Institute of Technology, Shenzhen<br>
+  <small>* Corresponding author.</small>
 </p>
 
 <p align="center">
